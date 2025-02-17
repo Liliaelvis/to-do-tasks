@@ -5,15 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn localStorage by Building a Todo App</title>
+  <title>Todo App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="bg-cyan-900 font-sans">
   <main>
     <h1>Todo App</h1>
     <div class="todo-app">
-      <button id="open-task-form-btn" class="btn large-btn">
+      <button id="open-task-form-btn" class="bg-blue-300 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all">
         Add New Task
       </button>
       <form class="task-form hidden" id="task-form">
@@ -24,11 +25,11 @@
         </div>
         <div class="task-form-body">
           <label class="task-form-label" for="title-input">Title</label>
-          <input required type="text" class="form-control" id="title-input" value="" />
+          <input required type="text" class="form-control border border-black" id="title-input" value="" />
           <label class="task-form-label" for="date-input">Date</label>
-          <input type="date" class="form-control" id="date-input" value="" />
+          <input type="date" class="form-control border border-black" id="date-input" value="" />
           <label class="task-form-label" for="description-input">Description</label>
-          <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
+          <textarea class="form-control border border-black" id="description-input" cols="30" rows="5"></textarea>
         </div>
         <div class="task-form-footer">
           <button id="add-or-update-task-btn" class="btn large-btn" type="submit">

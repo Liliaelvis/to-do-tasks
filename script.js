@@ -12,10 +12,19 @@ const descriptionInput = document.getElementById("description-input");
 
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
-
 const removeSpecialChars = (val) => {
   return val.trim().replace(/[^A-Za-z0-9\-\s]/g, '')
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.getElementById("date-input");
+
+  // Obtener la fecha actual en formato YYYY-MM-DD
+  const today = new Date().toISOString().split("T")[0];
+
+  // Establecer la fecha mínima en el input
+  dateInput.setAttribute("min", today);
+});
 
 const addOrUpdateTask = () => {
    if(!titleInput.value.trim()){
