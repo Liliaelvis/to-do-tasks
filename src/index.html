@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-cyan-900 font-sans">
+  <main class="flex flex-col justify-center items-center">
+    <h1 class="text-gray-300 my-5">Todo App</h1>
+    <div class="todo-app bg-white w-96 h-[400px] border-4 border-yellow-400 rounded-lg p-4 relative flex flex-col gap-4">
+      <button id="open-task-form-btn" class="bg-blue-300 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-all">
+        Add New Task
+      </button>
+      <form class="task-form hidden bg-white shadow-2xl rounded-xl p-6 w-96 space-y-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-start overflow-auto mt-20" id="task-form">
+        <div class="task-form-header flex justify-end gap-4">
+          <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close">
+            <svg class="close-icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+              <path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" />
+              <path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" />
+            </svg>
+          </button>
+        </div>
+        <div class="task-form-body flex flex-col space-y-4">
+          <label class="task-form-label font-bold text-xl" for="title-input">Title</label>
+          <input required type="text" class="form-control w-full border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400" id="title-input" value="" />
+          <label class="task-form-label font-bold text-xl" for="date-input">Date</label>
+          <input type="date" class="form-control border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400" id="date-input" value="" />
+          <label class="task-form-label font-bold text-xl" for="description-input">Description</label>
+          <textarea class="form-control border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400" id="description-input" cols="30" rows="5"></textarea>
+        </div>
+        <div class="task-form-footer flex justify-center">
+          <button id="add-or-update-task-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-10 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+            Add Task
+          </button>
+        </div>
+      </form>
+      <dialog class="p-4 m-4 rounded-lg" id="confirm-close-dialog">
+        <form method="dialog">
+          <p class="discard-message-text font-bold text-xl">Discard unsaved changes?</p>
+          <div class="confirm-close-dialog-btn-container flex justify-center mt-4">
+            <button id="cancel-btn" class="btn bg-yellow-400 text-dark-gray py-2 px-4 rounded-lg mx-2 border-4 border-yellow-400 hover:bg-yellow-500">
+              Cancel
+            </button>
+            <button id="discard-btn" class="btn bg-yellow-400 text-dark-gray py-2 px-4 rounded-lg mx-2 border-4 border-yellow-400 hover:bg-yellow-500">
+              Discard
+            </button>
+          </div>
+        </form> </dialog>
+      <div id="tasks-container" class="overflow-y-auto"></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
